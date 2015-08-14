@@ -1,6 +1,7 @@
 package com.example.i.myapplication;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -23,5 +24,10 @@ public class TabStrip extends LinearLayout {
         setOrientation(HORIZONTAL);
         setGravity(Gravity.CENTER_VERTICAL);
         setBackgroundColor(Color.WHITE);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
     }
 }
