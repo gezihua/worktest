@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, Main2Activity.class);
                 startActivity(intent);
+                Log.e("print","fuck");
 
             }
         });

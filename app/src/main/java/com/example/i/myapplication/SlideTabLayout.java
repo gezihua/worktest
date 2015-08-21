@@ -69,6 +69,7 @@ public class SlideTabLayout extends HorizontalScrollView {
         public void onPageSelected(int i) {
             // scrollto
             scrollToIndexPage(i);
+            mTabStrip.updateHintLine(i);
         }
 
 
@@ -80,7 +81,8 @@ public class SlideTabLayout extends HorizontalScrollView {
 
     private void scrollToIndexPage(int i) {
         if (i >= 0) {
-         scrollTo(i*mTitleWidth,0);
+            scrollTo(i * mTitleWidth, 0);
+            mTabStrip.updateHintLine(i);
         }
     }
 
@@ -124,6 +126,7 @@ public class SlideTabLayout extends HorizontalScrollView {
         public void onClick(View v) {
             if (v != null && mViewpager != null && position < mViewpager.getAdapter().getCount()) {
                 mViewpager.setCurrentItem(position, true);
+                mTabStrip.updateHintLine(position);
             }
         }
     }

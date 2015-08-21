@@ -5,6 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,6 +22,7 @@ public class Main2Activity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         init();
+        Log.e("print", "fuck2");
     }
 
     private void init() {
@@ -58,7 +61,8 @@ public class Main2Activity extends FragmentActivity {
             public View getView(int position, View convertView, ViewGroup parent) {
                 TextView text = new TextView(getBaseContext());
                 text.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-                text.setText(""+position);
+                text.setText("" + position);
+                text.setGravity(Gravity.CENTER_VERTICAL|Gravity.CENTER_HORIZONTAL);
                 return text;
             }
         };
