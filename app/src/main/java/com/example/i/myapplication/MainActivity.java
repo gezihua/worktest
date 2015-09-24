@@ -1,6 +1,9 @@
 package com.example.i.myapplication;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.i.myapplication.view.BitmapFrame;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -22,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         init();
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     private void init() {
         // 创建一个线性布局管理器
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.listview);
@@ -44,14 +50,22 @@ public class MainActivity extends AppCompatActivity {
                 click();
             }
         });
-        findViewById(R.id.ani).setOnClickListener(new View.OnClickListener(){
+        findViewById(R.id.ani).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, Main2Activity.class);
                 startActivity(intent);
-                Log.e("print","fuck");
+                Log.e("print", "fuck");
 
+            }
+        });
+        final AnimationDrawable animationDrawable = new BitmapFrame(this).getAnimationDrawable();
+        findViewById(R.id.frame).setBackground(animationDrawable);
+        findViewById(R.id.frame).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              animationDrawable.start();
             }
         });
     }
