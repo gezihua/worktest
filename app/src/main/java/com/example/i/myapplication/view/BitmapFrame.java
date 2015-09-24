@@ -21,9 +21,9 @@ public class BitmapFrame {
     public AnimationDrawable getAnimationDrawable() {
         AnimationDrawable drawable = new AnimationDrawable();
         BitmapDrawable drawable1 = new BitmapDrawable(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.ic_collapse_small_holo_light));
-        drawable.addFrame(drawable1, 0);
+        drawable.addFrame(drawable1, 200);
         drawable1 = new BitmapDrawable(BitmapFactory.decodeResource(mContext.getResources(), R.drawable.ic_expand_small_holo_light));
-        drawable.addFrame(drawable1, 1);
+        drawable.addFrame(drawable1, 200);
         return drawable;
     }
 
