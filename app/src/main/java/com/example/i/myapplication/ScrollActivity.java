@@ -11,6 +11,7 @@ public class ScrollActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_scroll);
+        init();
     }
     private void  init(){
 
